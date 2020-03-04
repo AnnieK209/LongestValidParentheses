@@ -10,18 +10,18 @@ class LongestValidParentheses {
 		int c = sc.nextInt();
 		sc.nextLine();
 
-	    for(int i=0; i<c; i++) {
-		    String s = sc.nextLine();
-     		Stack<Integer> stack = new Stack<Integer>();
+    for(int i=0; i<c; i++) {
+	    String s = sc.nextLine();
+   		Stack<Integer> stack = new Stack<Integer>();
 
-     		for(int j=0;j<s.length(); j++) {
-     		    if ((!stack.isEmpty()) && (s.charAt(j) == ')') && (s.charAt(stack.peek())=='(')) {
-     		        stack.pop();
-     		    } else {
-     		        stack.push(j);
-     		    }
+   		for(int j=0;j<s.length(); j++) {
+   		    if ((!stack.isEmpty()) && (s.charAt(j) == ')') && (s.charAt(stack.peek())=='(')) {
+   		        stack.pop();
+   		    } else {
+   		        stack.push(j);
+   		    }
      		}
-      		stack.push(s.length());
+      	stack.push(s.length());
 
      		int result = 0;
      		while(!stack.isEmpty()) {
